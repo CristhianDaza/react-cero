@@ -1,9 +1,9 @@
 import React from 'react';
 import './styles/styles.scss'
-import Curso from './Curso'
-import cursos from './cursos'
-import Banner from './Banner'
-import Formulario from './Formulario'
+import Curso from './components/Curso'
+import cursos from './lib/cursos'
+import Banner from './components/Bannerents/Banner'
+import Formulario from './components/Formulario'
 
 
 
