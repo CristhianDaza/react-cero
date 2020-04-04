@@ -1,5 +1,5 @@
 import React from 'react'
-import cursos from '../lib/cursos'
+import cursos from '../../lib/cursos'
 import {Link} from 'react-router-dom'
 
 const CursoId = ({ match }) => {

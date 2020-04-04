@@ -1,21 +1,21 @@
 import React from 'react';
-import './styles/styles.scss'
-import Curso from './components/Curso'
-import cursos from './lib/cursos'
-import Banner from './components/Banner'
-import Formulario from './components/Formulario'
-import CursoId from './components/CursoId'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import MainMenu from './components/MainMenu'
-import Historial from './components/Historial'
+import '../styles/styles.scss'
+import Curso from './Pages/Curso'
+import cursos from '../lib/cursos'
+import Formulario from './Pages/Formulario'
+import CursoId from './Molecules/CursoId'
+import Header from './Organisms/Header'
+import Historial from './Pages/Historial'
+import Home from './Pages/Home';
 
 
 
 const App = () => (
   <Router>
-    <MainMenu />
+    <Header />
     <Switch>
-      <Route path="/" exact component={Banner} />
+      <Route path="/" exact component={Home} />
       <Route path="/cursos/:id" component={CursoId} />
       <Route path="/historial" component={Historial} />
       <Route path="/cursos" component={
