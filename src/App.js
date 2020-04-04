@@ -6,14 +6,18 @@ import Banner from './components/Banner'
 import Formulario from './components/Formulario'
 import CursoId from './components/CursoId'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import MainMenu from './components/MainMenu'
+import Historial from './components/Historial'
 
 
 
 const App = () => (
   <Router>
+    <MainMenu />
     <Switch>
       <Route path="/" exact component={Banner} />
       <Route path="/cursos/:id" component={CursoId} />
+      <Route path="/historial" component={Historial} />
       <Route path="/cursos" component={
           ()=> <div className="ed-grid m-grid-4">
           {
