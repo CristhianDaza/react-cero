@@ -9,7 +9,7 @@ const CartCounter = ({cartLength}) => (
 
 const mapStateToProps = state => (
   {
-    cartLength: state.cart
+    cartLength: state.cartReducer.cart
   }
 )
 const mapDispatchToProps = () => ({})

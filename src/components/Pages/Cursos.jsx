@@ -1,33 +1,13 @@
-import React, {Component} from 'react';
-import Axios from 'axios';
+import React from 'react';
 import '../../styles/Loader.css'
 import CursoTarjeta from '../Organisms/CursosTarjeta';
-// import withLoader from '../HOC/withLoader';
+import {connect} from 'react-redux'
 
-class Cursos extends Component {
-  constructor(props) {
-    super(props)
+const Cursos = ({cursos}) =>  <CursoTarjeta  cursos={cursos} />
 
-    this.state = {
-      cursos: []
-    }
-  }
+const mapStateToProps = state => ({
+  cursos: state.cursosReducer.cursos
+})
 
-  componentDidMount() {
-    const URL = 'http://my-json-server.typicode.com/CristhianDaza/json-db/cursos'
-    Axios.get(URL)
-      .then(respuesta => {
-        this.setState({
-          cursos: respuesta.data
-        })
-      })
-  }
 
-  render(){
-    const {cursos} = this.state
-
-    return <CursoTarjeta  cursos={cursos} />
-  }
-}
-
-export default Cursos
+export default connect(mapStateToProps, {})(Cursos)

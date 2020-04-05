@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import Usuario from '../Molecules/Usuario'
 import axios from 'axios'
 import '../../styles/Loader.css'
 import UsuarioTarjeta from '../Organisms/UsuariosTarjeta'
