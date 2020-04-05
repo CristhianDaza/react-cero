@@ -1,37 +1,23 @@
-import React, {Component} from 'react'
-import axios from 'axios'
+import React, {useState} from 'react'
 import CursoIdTarjeta from './CursoIdTarjeta'
+import useCurso from '../CustomHooks/useCurso'
 
 
-class CursoId extends Component {
-  constructor(props){
-    super(props)
 
-    this.state = {
-      cursos: []
-    }
+const CursoId = ({match}) => {
+  
+  const [comentario, setComentario] = useState ("Sin comentarios")
+
+  const curso = useCurso(match.params.id)
+
+  const miComentario = e => {
+    setComentario(e.target.value)
   }
-
-  componentDidMount() {
-    const URL = `http://my-json-server.typicode.com/CristhianDaza/json-db/cursos/${this.props.match.params.id}`
-    axios.get(URL)
-      .then(respuesta => {
-        this.setState({
-          cursos: respuesta.data
-        })
-      })
-  }
-
-  render() {
-    const {cursos} = this.state
-    return (
-      <>
-      {
-        <CursoIdTarjeta cursos={cursos} />
-      }
-      </>
-    )
-  }
+  return (
+    <>
+     <CursoIdTarjeta cursos={curso.cursos} miComentario={miComentario} comentario={comentario} />
+    </>
+  )
 }
 
 
