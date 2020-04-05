@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/styles.scss'
-import CursoTarjeta from './Organisms/CursoTarjeta'
+import Cursos from './Pages/Cursos'
 import Formulario from './Pages/Formulario'
 import CursoId from './Molecules/CursoId'
 import Header from './Organisms/Header'
@@ -20,7 +20,7 @@ const App = () => (
       <Route path="/cursos/:id" component={CursoId} />
       <Route path="/historial" component={Historial} />
       <Route path="/usuarios" component={()=> <Usuarios />} />
-      <Route path="/cursos" component={CursoTarjeta} />
+      <Route path="/cursos" component={Cursos} />
       <Route path="/formulario" component={Formulario} />
       <Route component={Error404} />
     </Switch>
